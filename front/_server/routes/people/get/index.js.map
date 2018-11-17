@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../src/routes/people/get/index.ts"],"names":[],"mappings":";;;;;AAAA,iCAA4B;AAC5B,iCAA4B;AAC5B,oCAA+B","sourcesContent":["export * from './one.route';\nexport * from './all.route';\nexport * from './random.route';\n"]}
