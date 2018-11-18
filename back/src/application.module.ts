@@ -4,21 +4,15 @@ import { LoggerModule, LoggerService } from '@hapiness/logger';
 import { MongoClientService, MongoModule } from '@hapiness/mongo';
 import { SwagModule } from '@hapiness/swag';
 import { Observable } from 'rxjs';
-import { PersonModel } from './models';
-import {
-    DeleteOnePersonRoute,
-    GetAllPeopleRoute,
-    GetHelloWorldRoute,
-    GetOnePersonRoute,
-    GetRandomPersonRoute,
-    PostCreatePersonRoute,
-    PutUpdatePersonRoute
-} from './routes';
-import { PeopleDocumentService, PeopleService } from './services';
+import { CvsService, CvsDocumentService } from './services';
+import {GetAllCvsRoute, GetOneCvRoute} from './routes/cvs/get';
+import {PutUpdateCvRoute} from './routes/cvs/put';
+import {DeleteOneCvRoute} from './routes/cvs/delete';
+import {PostCreateCvRoute} from './routes/cvs/post';
 
 // factory to declare dependency between PeopleDocumentService and MongoClientService
 // we use it to be sure that MongoClientService will be loaded before PeopleDocumentService
-const peopleDocumentServiceFactory = (mongoClientService: MongoClientService) => new PeopleDocumentService(mongoClientService);
+const cvsDocumentServiceFactory = (mongoClientService: MongoClientService) => new CvsDocumentService(mongoClientService);
 
 @HapinessModule({
     version: '1.0.0',
@@ -28,19 +22,16 @@ const peopleDocumentServiceFactory = (mongoClientService: MongoClientService) =>
         MongoModule
     ],
     declarations: [
-        GetHelloWorldRoute,
-        GetAllPeopleRoute,
-        GetOnePersonRoute,
-        GetRandomPersonRoute,
-        PostCreatePersonRoute,
-        PutUpdatePersonRoute,
-        DeleteOnePersonRoute,
-        PersonModel
+        GetOneCvRoute,
+        GetAllCvsRoute,
+        PutUpdateCvRoute,
+        DeleteOneCvRoute,
+        PostCreateCvRoute
     ],
     providers: [
         HttpServerService,
-        PeopleService,
-        { provide: PeopleDocumentService, useFactory: peopleDocumentServiceFactory, deps: [ MongoClientService ] }
+        CvsService,
+        { provide: CvsDocumentService, useFactory: cvsDocumentServiceFactory, deps: [ MongoClientService ] }
     ]
 })
 export class ApplicationModule implements OnStart, OnError {

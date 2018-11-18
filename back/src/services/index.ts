@@ -1,2 +1,2 @@
-export * from './people.service';
-export * from './people-document.service';
+export * from './cvs.service';
+export * from './cvs-document.service';
