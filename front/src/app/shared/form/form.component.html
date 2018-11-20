@@ -1,4 +1,4 @@
-<h2 mat-dialog-title *ngIf="isUpdateMode">Update {{ form.get('firstname').value }} {{ form.get('lastname').value }}</h2>
+<h2 mat-dialog-title *ngIf="isUpdateMode">Update {{ form.get('nom').value }} {{ form.get('prenom').value }}</h2>
 <h2 mat-dialog-title *ngIf="!isUpdateMode">Create new person</h2>
 
 <mat-dialog-content>
@@ -12,21 +12,21 @@
     <table class="full-width" cellspacing="0">
       <tr>
         <td>
-          <mat-form-field class="full-width" [class.mgb15]="form.get('firstname').dirty && form.get('firstname').invalid">
-            <input matInput placeholder="First name" formControlName="firstname" minlength="2" required name="firstname" />
-            <mat-error *ngIf="form.get('firstname').dirty && form.get('firstname').hasError('required')">
+          <mat-form-field class="full-width" [class.mgb15]="form.get('nom').dirty && form.get('nom').invalid">
+            <input matInput placeholder="First name" formControlName="nom" minlength="2" required name="nom" />
+            <mat-error *ngIf="form.get('nom').dirty && form.get('nom').hasError('required')">
               First name is <strong>required</strong>
             </mat-error>
-            <mat-error *ngIf="form.get('firstname').dirty && form.get('firstname').hasError('minlength')">
+            <mat-error *ngIf="form.get('nom').dirty && form.get('nom').hasError('minlength')">
               First name is <strong>2 chars min</strong>
             </mat-error>
           </mat-form-field>
           <mat-form-field class="full-width">
-            <input matInput placeholder="Last Name" formControlName="lastname" minlength="2" required name="lastname" />
-            <mat-error *ngIf="form.get('lastname').dirty && form.get('lastname').hasError('required')">
+            <input matInput placeholder="Last Name" formControlName="prenom" minlength="2" required name="prenom" />
+            <mat-error *ngIf="form.get('prenom').dirty && form.get('prenom').hasError('required')">
               Last name is <strong>required</strong>
             </mat-error>
-            <mat-error *ngIf="form.get('lastname').dirty && form.get('lastname').hasError('minlength')">
+            <mat-error *ngIf="form.get('prenom').dirty && form.get('prenom').hasError('minlength')">
               Last name is <strong>2 chars min</strong>
             </mat-error>
           </mat-form-field>
@@ -50,9 +50,9 @@
       </mat-form-field>
     </p>
 
-    <p formGroupName="address">
+    <p formGroupName="adresse">
       <mat-form-field class="full-width">
-        <input matInput placeholder="Address" formControlName="street" name="street"/>
+        <input matInput placeholder="Adresse" formControlName="street" name="street"/>
       </mat-form-field>
     </p>
 
@@ -73,18 +73,21 @@
 
     <p>
       <mat-form-field class="full-width">
-        <input matInput placeholder="Phone (ex: 0612345678)" formControlName="phone" required name="phone" />
-        <mat-error *ngIf="form.get('phone').dirty && form.get('phone').hasError('required')">
+        <input matInput placeholder="Phone (ex: 0612345678)" formControlName="telephone" required name="telephone" />
+        <mat-error *ngIf="form.get('telephone').dirty && form.get('telephone').hasError('required')">
           Phone is <strong>required</strong>
         </mat-error>
-        <mat-error *ngIf="form.get('phone').dirty && form.get('phone').hasError('pattern')">
+        <mat-error *ngIf="form.get('telephone').dirty && form.get('telephone').hasError('pattern')">
           Phone number must be <strong>10 digits</strong>
         </mat-error>
       </mat-form-field>
     </p>
 
     <p>
-      <mat-checkbox formControlName="isManager" name="isManager">Manager</mat-checkbox>
+      <mat-checkbox formControlName="permis" name="permis">permis B  </mat-checkbox>
+    </p>
+    <p>
+      <mat-checkbox formControlName="vehicule" name="vehicule">vehicule</mat-checkbox>
     </p>
 
   </form>

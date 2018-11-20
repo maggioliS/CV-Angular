@@ -96,13 +96,6 @@ export class PeopleComponent implements OnInit {
   }
 
   /**
-   * Function to switch view
-   */
-  switchView() {
-    this._view = (this._view === 'card') ? 'list' : 'card';
-  }
-
-  /**
    * Function to navigate to current person
    */
   navigate(person: Person) {

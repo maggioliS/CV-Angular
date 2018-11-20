@@ -29,7 +29,7 @@ export class BadgeDirective implements OnInit {
   ngOnInit() {
     of(this._person)
       .pipe(
-        filter(_ => !!_ && !!_.isManager)
+        filter(_ => !!_)
       )
       .subscribe(_ =>
         this._rd.setProperty(this._el.nativeElement, 'innerHTML', '<i class="material-icons">supervisor_account</i>'));

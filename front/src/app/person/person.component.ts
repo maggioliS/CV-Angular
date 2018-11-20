@@ -47,22 +47,8 @@ export class PersonComponent implements OnInit {
         filter(params => !!params['id']),
         flatMap(params => this._peopleService.fetchOne(params['id'])),
         tap(_ => this._isPerson = true)
-      ),
-      this._route.params.pipe(
-        filter(params => !params['id']),
-        flatMap(_ => this._peopleService.fetchRandom()),
-        tap(_ => this._isPerson = false)
       )
     )
       .subscribe((person: any) => this._person = person);
-  }
-
-  /**
-   * Returns random people
-   */
-  random() {
-    this._peopleService
-      .fetchRandom()
-      .subscribe((person: Person) => this._person = person);
   }
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
-import { Person } from '../interfaces/person';
+import {Address, Person, Sections} from '../interfaces/person';
 import { defaultIfEmpty, filter, map } from 'rxjs/operators';
 
 @Injectable({
@@ -16,17 +16,177 @@ export class PeopleService {
 
   constructor(private _http: HttpClient) {
     this._defaultPerson = {
-      firstname: 'firstname',
-      lastname: 'lastname',
+      titre: 'cvDefault',
+      nom: 'firstname',
+      prenom: 'lastname',
       email: 'email@ema.il',
-      phone: '1234567890',
-      address: {
-        postalCode: '12345',
+      telephone: '1234567890',
+      adresse: {
+        postalCode: 12345,
         street: 'street',
         city: 'city'
       },
       photo: 'https://randomuser.me/api/portraits/lego/6.jpg',
-      isManager: false
+      permis: false,
+      vehicule: false,
+      age: 18,
+      nationalite: 'fr',
+      experience: {
+        s1: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s2: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s3: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s4: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s5: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s6: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s7: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s8: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s9: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s10: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        }
+      },
+      formation: {
+        s1: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s2: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s3: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s4: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s5: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s6: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s7: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s8: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s9: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s10: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        }
+      },
+      hobbie: {
+        s1: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s2: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s3: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s4: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s5: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s6: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s7: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s8: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s9: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        },
+        s10: {
+          titre: 'kfvb',
+          date: 'dosh',
+          description: 'flknvl'
+        }
+      }
     };
     this._backendURL = {};
 

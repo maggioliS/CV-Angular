@@ -90,17 +90,179 @@ export class FormComponent implements OnInit, OnChanges {
       this._form.patchValue(this._model);
     } else {
       this._model = {
-        firstname: '',
-        lastname: '',
+        titre: '',
+        nom: '',
+        prenom: '',
         email: '',
-        phone: '',
-        address: {
-          postalCode: '',
+        age: 18,
+        telephone: '',
+        adresse: {
+          postalCode: 0,
           street: '',
           city: ''
         },
         photo: 'https://randomuser.me/api/portraits/lego/6.jpg',
-        isManager: false
+        permis: false,
+        vehicule: false,
+        experience: {
+          s1: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s2: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s3: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s4: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+
+          s5: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s6: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s7: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s8: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s9: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s10: {
+            titre: '',
+            date: '',
+            description: ''
+          }
+        },
+        formation: {
+          s1: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s2: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s3: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s4: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+
+          s5: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s6: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s7: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s8: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s9: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s10: {
+            titre: '',
+            date: '',
+            description: ''
+          }
+        },
+        hobbie: {
+          s1: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s2: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s3: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s4: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+
+          s5: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s6: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s7: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s8: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s9: {
+            titre: '',
+            date: '',
+            description: ''
+          },
+          s10: {
+            titre: '',
+            date: '',
+            description: ''
+          }
+        }
       };
       this._isUpdateMode = false;
     }

@@ -57,15 +57,4 @@ export class CardComponent implements OnInit {
   delete(person: Person) {
     this._delete$.emit(person);
   }
-
-  /**
-   * Function to navigate to manager details
-   */
-  goToManagerIfExist() {
-    of(this._person.managerId)
-      .pipe(
-        filter(_ => !!_)
-      )
-      .subscribe(_ => this._router.navigate(['/person', _]));
-  }
 }
