@@ -1,0 +1,8 @@
+git clone https://github.com/maggioliS/CV-Angular.git My-simple-cv
+Ensuite faire un yarn install dans le dossier front et back
+Puis Créer une BDD avec le nom : cvdb
+Créer une collection : cvs
+importer les données dans la BDD depuis le fichier : init.mongo.js 
+Lancer la BDD 
+Puis éxecuter le script “run.sh” qui se trouve à la racine du projet
+
